@@ -53,6 +53,8 @@ Genres_Id int references Genres(Id)
 ------1-------
 SELECT * FROM Movies
 
+CREATE VIEW ReadDataMovie
+AS
 SELECT m.Name 'MovieName',m.IMDBRating 'IMDBRating',g.Name'GenreName',d.Name'DirectorName',ac.Name'ActorsName' FROM  Movies m
 JOIN Movies_Genres mg 
 ON 
@@ -73,6 +75,8 @@ JOIN Directors d
 ON
 d.Id=mv.Directors_Id
 WHERE m.IMDBRating>6
+
+SELECT * FROM ReadDataMovie
 
 ----2-----
 
